@@ -1,6 +1,18 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { 
+  NavigationMenu, 
+  NavigationMenuContent, 
+  NavigationMenuItem, 
+  NavigationMenuLink, 
+  NavigationMenuList, 
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle
+} from '@/components/ui/navigation-menu';
+import { cn } from '@/lib/utils';
 
 const Navbar = () => {
   return (
@@ -51,101 +63,157 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Main navigation */}
-      <nav className="bg-[#800000] text-white">
+      {/* Main navigation using Radix UI NavigationMenu */}
+      <div className="bg-[#800000] text-white relative z-40">
         <div className="container mx-auto px-4">
-          <div className="relative">
-            <button className="md:hidden py-3 px-4 text-white">
-              Menu
-            </button>
-            <ul className="hidden md:flex">
-              {/* Institute dropdown */}
-              <li className="group relative">
-                <a href="#" className="block px-4 py-3 font-medium hover:bg-[#5d0000]">
-                  Institute <span>▼</span>
-                </a>
-                <ul className="absolute hidden group-hover:block left-0 bg-white shadow-md min-w-[200px] z-10">
-                  <li>
-                    <Link href="/about" className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/director" className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
-                      Director
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="http://iiitvadodara.ac.in/bog.php" target="_blank" className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
-                      Board of Governors
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/rti" className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
-                      RTI
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              
-              {/* Academics dropdown */}
-              <li className="group relative">
-                <a href="#" className="block px-4 py-3 font-medium hover:bg-[#5d0000]">
-                  Academics <span>▼</span>
-                </a>
-                <ul className="absolute hidden group-hover:block left-0 bg-white shadow-md min-w-[200px] z-10">
-                  <li>
-                    <Link href="/btech" className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
-                      B.Tech
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/mca" className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
-                      Post Graduate (MCA)
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              
-              {/* People dropdown */}
-              <li className="group relative">
-                <a href="#" className="block px-4 py-3 font-medium hover:bg-[#5d0000]">
-                  People <span>▼</span>
-                </a>
-                <ul className="absolute hidden group-hover:block left-0 bg-white shadow-md min-w-[200px] z-10">
-                  <li>
-                    <Link href="/faculty" className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
-                      Faculty
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/staff" className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
-                      Staff
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              
-              {/* Other menu items */}
-              <li>
-                <Link href="/hostel" className="block px-4 py-3 font-medium hover:bg-[#5d0000]">
-                  Hostel
-                </Link>
-              </li>
-              <li>
-                <Link href="/tender" className="block px-4 py-3 font-medium hover:bg-[#5d0000]">
-                  Tender
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="block px-4 py-3 font-medium hover:bg-[#5d0000]">
-                  FAQ
-                </Link>
-              </li>
-            </ul>
+          <div className="nav-container relative">
+            <NavigationMenu className="mx-auto max-w-none w-full justify-start" viewport={false}>
+              <NavigationMenuList className="flex gap-0 text-white">
+                
+                {/* Institute dropdown */}
+                <NavigationMenuItem className="relative">
+                  <NavigationMenuTrigger className="font-medium text-white bg-[#800000] hover:bg-[#5d0000] focus:bg-[#5d0000] rounded-none h-auto py-3 px-4 data-[state=open]:bg-[#5d0000]">
+                    Institute
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white shadow-md rounded-b-md border-0 origin-top-left absolute left-0 z-50">
+                    <ul className="grid w-[200px] gap-0">
+                      <li>
+                        <Link href="/about" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            About
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/director" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            Director
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="http://iiitvadodara.ac.in/bog.php" target="_blank" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            Board of Governors
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/rti" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            RTI
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Academics dropdown */}
+                <NavigationMenuItem className="relative">
+                  <NavigationMenuTrigger className="font-medium text-white bg-[#800000] hover:bg-[#5d0000] focus:bg-[#5d0000] rounded-none h-auto py-3 px-4 data-[state=open]:bg-[#5d0000]">
+                    Academics
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white shadow-md rounded-b-md border-0 origin-top-left absolute left-0 z-50">
+                    <ul className="grid w-[220px] gap-0">
+                      <li>
+                        <Link href="/btech" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            B.Tech
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/mca" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            Post Graduate (MCA)
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* People dropdown */}
+                <NavigationMenuItem className="relative">
+                  <NavigationMenuTrigger className="font-medium text-white bg-[#800000] hover:bg-[#5d0000] focus:bg-[#5d0000] rounded-none h-auto py-3 px-4 data-[state=open]:bg-[#5d0000]">
+                    People
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white shadow-md rounded-b-md border-0 origin-top-left absolute left-0 z-50">
+                    <ul className="grid w-[200px] gap-0">
+                      <li>
+                        <Link href="/faculty" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            Faculty
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/staff" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            Staff
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Regular menu items */}
+                <NavigationMenuItem>
+                  <Link href="/hostel" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(
+                      "block px-4 py-3 font-medium bg-[#800000] hover:bg-[#5d0000] focus:bg-[#5d0000] text-white"
+                    )}>
+                      Hostel
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <Link href="/tender" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(
+                      "block px-4 py-3 font-medium bg-[#800000] hover:bg-[#5d0000] focus:bg-[#5d0000] text-white"
+                    )}>
+                      Tender
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <Link href="/commitee" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(
+                      "block px-4 py-3 font-medium bg-[#800000] hover:bg-[#5d0000] focus:bg-[#5d0000] text-white"
+                    )}>
+                      Committee
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <Link href="/faq" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(
+                      "block px-4 py-3 font-medium bg-[#800000] hover:bg-[#5d0000] focus:bg-[#5d0000] text-white"
+                    )}>
+                      FAQ
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
+
+          <style jsx global>{`
+            /* Override Radix UI's default positioning */
+            .nav-container [data-state="open"] > [data-radix-popper-content-wrapper] {
+              transform: translate3d(0, 0, 0) !important;
+              left: 0 !important;
+              top: 100% !important;
+              margin-top: 0 !important;
+            }
+          `}</style>
         </div>
-      </nav>
+      </div>
     </header>
   );
 };
