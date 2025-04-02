@@ -17,7 +17,7 @@ export default function Placement() {
             <MaskContainer
               revealText={
                 <h1 className="text-4xl font-bold text-[#800000] ">
-                  Placement <span className="text-blue-600">Searching</span>...
+                  Placement <span className="text-blue-600">Loading...</span>...
                 </h1>
               }
             >
