@@ -300,6 +300,15 @@ const Navbar = () => {
 
                 {/* Regular menu items */}
                 <NavigationMenuItem>
+                  <Link href="#" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(
+                      "block px-4 py-3 font-medium bg-[#800000] hover:bg-[#5d0000] focus:bg-[#5d0000] text-white"
+                    )}>
+                      Career
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
                   <Link href="/hostel" legacyBehavior passHref>
                     <NavigationMenuLink className={cn(
                       "block px-4 py-3 font-medium bg-[#800000] hover:bg-[#5d0000] focus:bg-[#5d0000] text-white"
