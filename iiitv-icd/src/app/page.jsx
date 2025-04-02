@@ -161,28 +161,58 @@ export default function Home() {
       </div>
 
       {/* Updated Announcements Section with HoverEffect */}
-      <div className="max-w-screen-xl mx-auto px-4 py-8">
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-100">
-          <div className="bg-gradient-to-r from-[#800000] to-[#5d0000] text-white p-4">
-            <h2 className="text-2xl font-bold flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-              </svg>
-              Announcements
-            </h2>
-          </div>
-          <div className="p-6">
-            <HoverEffect items={announcements.map(announcement => ({
-              title: announcement.title,
-              description: announcement.description,
-              link: announcement.link,
-              className: `${
-                announcement.isNew ? 'border-l-4 border-[#800000]' : ''
-              } bg-white hover:bg-gray-50 transition-colors duration-200`
-            }))} />
+      <section className="py-12 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white shadow-md rounded-lg overflow-hidden">
+            <div className="bg-gradient-to-r from-[#800000] to-[#5d0000] text-white p-6">
+              <h2 className="text-2xl font-bold flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-1.872-8.098A18.182 18.182 0 0111 5.882z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                </svg>
+                Announcements
+              </h2>
+            </div>
+            <div className="p-6">
+              <div className="space-y-4">
+                {announcements.map((announcement) => (
+                  <div
+                    key={announcement.id}
+                    className={`p-4 rounded-lg transition-all duration-300 hover:shadow-md ${
+                      announcement.isNew ? 'bg-gray-50 border-l-4 border-[#800000]' : 'bg-gray-50'
+                    }`}
+                  >
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{announcement.title}</h3>
+                        <p className="text-gray-600">{announcement.description}</p>
+                      </div>
+                      {announcement.isNew && (
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#800000] text-white">
+                          New
+                        </span>
+                      )}
+                    </div>
+                    {announcement.link && (
+                      <a
+                        href={announcement.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-3 inline-flex items-center text-[#800000] hover:text-[#5d0000] font-medium"
+                      >
+                        Read More
+                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Widgets Section */}
       <div className="max-w-screen-xl mx-auto px-4 py-8">
