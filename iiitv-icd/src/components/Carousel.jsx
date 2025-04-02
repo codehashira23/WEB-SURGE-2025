@@ -52,7 +52,7 @@ const Carousel = ({ images, options = { loop: true }, autoplay = true, autoplayD
                       priority={index === 0}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-                      <h3 className="text-white font-semibold text-lg">Campus Highlight {index + 1}</h3>
+                      <h3 className="text-white font-semibold text-lg"></h3>
                     </div>
                   </div>
                 </div>
