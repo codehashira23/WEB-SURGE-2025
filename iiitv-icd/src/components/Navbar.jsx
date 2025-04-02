@@ -99,9 +99,37 @@ const Navbar = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/rti" legacyBehavior passHref>
+                        <Link href="https://iiitvadodara.ac.in/senate.php" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            Senate
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="https://iiitvadodara.ac.in/finance_committee.php" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            Finanace Committee
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="" legacyBehavior passHref>
                           <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
                             RTI
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="http://diu.iiitvadodara.ac.in/pdf/MOU.pdf" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            MOU
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="https://iiitvadodara.ac.in/rr_policy.php" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            Policies
                           </NavigationMenuLink>
                         </Link>
                       </li>

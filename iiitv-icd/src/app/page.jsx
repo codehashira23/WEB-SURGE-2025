@@ -4,6 +4,16 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Carousel from '@/components/Carousel';
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
+import TimelineOppositeContent, {
+  timelineOppositeContentClasses,
+} from '@mui/lab/TimelineOppositeContent';
+import { HoverEffect } from '@/components/ui/card-hover-effect';
 
 // Carousel images data
 const carouselImages = [
@@ -23,25 +33,28 @@ const carouselImages = [
   "http://diu.iiitvadodara.ac.in/img/p2.png"
 ];
 
-// Announcements data
+// Updated announcements data with description
 const announcements = [
   {
     id: 1,
-    text: "Faculty Recruitment : ADVERTISEMENT NUMBER: IIITV/ESTT/RECT/FACULTY/24-25/01 DATED 09 DEC 2024: Update",
+    title: "Faculty Recruitment",
+    description: "ADVERTISMENT NUMBER: IIITV/ESTT/RECT/FACULTY/24-25/01 DATED 09 DEC 2024: Update",
     link: "https://drive.google.com/file/d/1tTjZ5bQhHuOmBjxM8iaoVXNt3SqlI7Mt/view",
     isNew: true,
     color: "blue"
   },
   {
     id: 2,
-    text: "Corrigendum - I to the Institute's EOI enquiry for 'Empanelment of vendors to provide student hostel accommodation' for Diu Campus(22.March.2025).",
+    title: "Corrigendum - I",
+    description: "Institute's EOI enquiry for 'Empanelment of vendors to provide student hostel accommodation' for Diu Campus(22.March.2025)",
     link: "http://diu.iiitvadodara.ac.in/pdf/IIITV - ICD _Hostel EOI_Corrigendum_I_22325.pdf",
     isNew: true,
     color: "red"
   },
   {
     id: 3,
-    text: "Admissions open for MTech, PhD",
+    title: "Admissions Open",
+    description: "MTech and PhD programs are now accepting applications",
     link: "#",
     isNew: true,
     color: "blue",
@@ -52,26 +65,30 @@ const announcements = [
   },
   {
     id: 4,
-    text: "New Programs Launched: BTech-AI, BTech-ECE, MCA, BSc online",
+    title: "New Programs",
+    description: "BTech-AI, BTech-ECE, MCA, BSc online programs launched",
     link: "mca.php",
     isNew: true,
     color: "red"
   },
   {
     id: 5,
-    text: "Advertisement for Faculty Positions (Dec 2024)",
+    title: "Faculty Positions",
+    description: "Advertisement for Faculty Positions (Dec 2024)",
     link: "https://iiitvadodara.ac.in/faculty_positions.php",
     color: "blue"
   },
   {
     id: 6,
-    text: "Anti Ragging Form for 2023-24 admission.",
+    title: "Anti Ragging Form",
+    description: "Anti Ragging Form for 2023-24 admission",
     link: "https://antiragging.in/affidavit_affiliated_form.php",
     color: "red"
   },
   {
     id: 7,
-    text: "Advertisement for Empanelment of Visiting Faculty for Academic Year 2023-24",
+    title: "Visiting Faculty",
+    description: "Advertisement for Empanelment of Visiting Faculty for Academic Year 2023-24",
     link: "http://diu.iiitvadodara.ac.in/FacultyRecu.php",
     color: "blue"
   }
@@ -129,7 +146,7 @@ const news = [
 export default function Home() {
   return (
     <div className="wrapper">
-      {/* Image Carousel - replaced with new component */}
+      {/* Image Carousel */}
       <div className="w-full bg-white">
         <div className="max-w-screen-xl mx-auto">
           <div className="my-4">
@@ -143,104 +160,68 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Announcements Alert */}
-      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-4 max-w-screen-xl mx-auto">
-        <div className="text-center">
-          <ul className="divide-y divide-yellow-200">
-            {announcements.slice(0, 5).map((announcement) => (
-              <li key={announcement.id} className="py-3">
-                <Link 
-                  href={announcement.link} 
-                  className={`text-${announcement.color}-600 font-semibold hover:underline flex items-center justify-center`}
-                >
-                  {announcement.text}
-                  {announcement.isNew && (
-                    <span className="ml-2">
-                      <Image src="http://diu.iiitvadodara.ac.in/img/new.gif" alt="New" width={36} height={14} />
-                    </span>
-                  )}
-                </Link>
-              </li>
-            ))}
-          </ul>
+      {/* Updated Announcements Section with HoverEffect */}
+      <div className="max-w-screen-xl mx-auto px-4 py-8">
+        <div className="bg-white shadow-md rounded-lg overflow-hidden">
+          <div className="bg-[#800000] text-white p-3">
+            <h2 className="text-xl font-semibold">Announcements</h2>
+          </div>
+          <div className="p-4">
+            <HoverEffect items={announcements.map(announcement => ({
+              title: announcement.title,
+              description: announcement.description,
+              link: announcement.link
+            }))} />
+          </div>
         </div>
       </div>
 
       {/* Widgets Section */}
       <div className="max-w-screen-xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Announcements */}
-          <div className="bg-white shadow-md rounded-lg overflow-hidden">
-            <div className="bg-[#800000] text-white p-3">
-              <h2 className="text-xl font-semibold">Announcements</h2>
-            </div>
-            <div className="p-4">
-              <ul className="divide-y divide-gray-200">
-                {announcements.slice(0, 3).map((announcement) => (
-                  <li key={announcement.id} className="py-3">
-                    <Link 
-                      href={announcement.link} 
-                      className={`text-${announcement.color}-600 font-semibold hover:underline block`}
-                    >
-                      {announcement.text}
-                    </Link>
-                  </li>
-                ))}
-                <li className="py-3">
-                  <span>Government of India Schemes for Students' Welfare</span>
-                  <div className="mt-1 space-x-2">
-                    <a href="https://www.vidyalakshmi.co.in/Students/indexPopup" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.vidyalakshmi.co.in</a>
-                    <a href="https://www.scholarships.gov.in" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.scholarships.gov.in</a>
-                  </div>
-                </li>
-              </ul>
-              
-              {/* My Gov Section */}
-              <div className="mt-6">
-                <div className="bg-[#800000] text-white p-3">
-                  <h2 className="text-xl font-semibold">My Gov</h2>
-                </div>
-                <div className="mt-4">
-                  <Link 
-                    href="/pdf/Achievements_MHRD.pdf" 
-                    className="text-blue-600 font-semibold hover:underline block"
-                  >
-                    Achievements of Ministry of Education, Government of India
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Events */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Events section remains the same */}
           <div className="bg-white shadow-md rounded-lg overflow-hidden">
             <div className="bg-[#800000] text-white p-3">
               <h2 className="text-xl font-semibold">Events</h2>
             </div>
             <div className="p-4">
-              <ul className="divide-y divide-gray-200">
+              <Timeline
+                sx={{
+                  [`& .${timelineOppositeContentClasses.root}`]: {
+                    flex: 0.2,
+                  },
+                  '& .MuiTimelineItem-root': {
+                    minHeight: '80px',
+                  },
+                  '& .MuiTimelineContent-root': {
+                    py: 2,
+                  },
+                }}
+              >
                 {events.map((event, index) => (
-                  <li key={index} className="py-3">
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 bg-[#800000] text-white rounded px-2 py-1 text-center mr-3">
-                        <span className="text-sm font-medium">{event.date}</span>
-                      </div>
-                      <div className="flex-grow">
-                        <Link 
-                          href={event.link} 
-                          className="text-gray-800 hover:text-[#800000] hover:underline"
-                        >
-                          {event.title}
-                        </Link>
-                      </div>
-                    </div>
-                  </li>
+                  <TimelineItem key={index}>
+                    <TimelineOppositeContent color="textSecondary" className="text-sm">
+                      {event.date}
+                    </TimelineOppositeContent>
+                    <TimelineSeparator>
+                      <TimelineDot color="primary" />
+                      {index < events.length - 1 && <TimelineConnector />}
+                    </TimelineSeparator>
+                    <TimelineContent>
+                      <Link 
+                        href={event.link} 
+                        className="text-gray-800 hover:text-[#800000] hover:underline block"
+                      >
+                        {event.title}
+                      </Link>
+                    </TimelineContent>
+                  </TimelineItem>
                 ))}
-              </ul>
+              </Timeline>
             </div>
           </div>
 
-          {/* News */}
+          {/* News section remains the same */}
           <div className="bg-white shadow-md rounded-lg overflow-hidden">
             <div className="bg-[#800000] text-white p-3">
               <h2 className="text-xl font-semibold">News</h2>
@@ -268,6 +249,9 @@ export default function Home() {
         <span>Visitors: </span>
         <span className="inline-block border border-gray-300 px-1">00000</span>
       </div>
+
+      {/* Shadow Line Separator */}
+      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent shadow-md"></div>
     </div>
   );
 }
