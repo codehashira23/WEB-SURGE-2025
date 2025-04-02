@@ -162,15 +162,23 @@ export default function Home() {
 
       {/* Updated Announcements Section with HoverEffect */}
       <div className="max-w-screen-xl mx-auto px-4 py-8">
-        <div className="bg-white shadow-md rounded-lg overflow-hidden">
-          <div className="bg-[#800000] text-white p-3">
-            <h2 className="text-xl font-semibold">Announcements</h2>
+        <div className="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-100">
+          <div className="bg-gradient-to-r from-[#800000] to-[#5d0000] text-white p-4">
+            <h2 className="text-2xl font-bold flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+              </svg>
+              Announcements
+            </h2>
           </div>
-          <div className="p-4">
+          <div className="p-6">
             <HoverEffect items={announcements.map(announcement => ({
               title: announcement.title,
               description: announcement.description,
-              link: announcement.link
+              link: announcement.link,
+              className: `${
+                announcement.isNew ? 'border-l-4 border-[#800000]' : ''
+              } bg-white hover:bg-gray-50 transition-colors duration-200`
             }))} />
           </div>
         </div>
