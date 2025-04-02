@@ -1,3 +1,4 @@
+import { Link } from 'lucide-react';
 import React from 'react';
 
 const faqItems = [
@@ -78,9 +79,9 @@ const faqItems = [
           Student accommodation is available in campus. Hostel has student capacity of 416 students. There is separate accommodation for girl students.
         </p>
         <p>
-          <a href="http://diu.iiitvadodara.ac.in/hostel.php" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+          <Link href="/hostel" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
             For more information
-          </a>
+          </Link>
         </p>
       </>
     )
@@ -170,10 +171,10 @@ const FAQ = () => {
               <strong>Address:</strong> IIIT Vadodara - International Campus Diu (IIITV-ICD), Education Hub, Kevdi - Diu (U.T) -362520
             </p>
             <div className="mt-4 flex space-x-4">
-              <a href="/" className="text-gray-700 hover:text-[#800000]">Home</a>
+              <Link href="/" className="text-gray-700 hover:text-[#800000]">Home</Link>
               <a href="http://diu.iiitvadodara.ac.in/rti.php" className="text-gray-700 hover:text-[#800000]">RTI</a>
               <a href="http://diu.iiitvadodara.ac.in/pdf/MOU.pdf" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#800000]">MOU</a>
-              <a href="http://diu.iiitvadodara.ac.in/admissions.php" className="text-gray-700 hover:text-[#800000]">Admission</a>
+              <Link href="/admissions" className="text-gray-700 hover:text-[#800000]">Admission</Link>
             </div>
           </div>
         </div>
