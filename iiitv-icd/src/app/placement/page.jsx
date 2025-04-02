@@ -9,20 +9,20 @@ export default function Placement() {
     <div className="wrapper">
       {/* Main Content */}
       <div className="max-w-screen-xl mx-auto px-4">
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="bg-red-200 shadow-lg rounded-lg overflow-hidden">
           
 
           {/* Content Section */}
           <div className=" px-10">
             <MaskContainer
               revealText={
-                <h1 className="text-4xl font-bold text-[#800000] ">
-                  Placement <span className="text-blue-600">Loading...</span>...
+                <h1 className="text-4xl font-bold text-[#090909] ">
+                  Placement <span className="text-blue-600">Loading</span>...
                 </h1>
               }
             >
-              <h1 className="text-4xl font-bold text-white">
-                Placement <span>Searching</span>...
+              <h1 className="text-4xl font-bold text-white ">
+                Placement <span className="text-blue-600" >Searching</span>
               </h1>
             </MaskContainer>
             <div className="prose max-w-none">
