@@ -2,18 +2,29 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { MaskContainer } from '@/components/ui/svg-mask-effect';
 
 export default function Placement() {
   return (
     <div className="wrapper">
       {/* Main Content */}
-      <div className="max-w-screen-xl mx-auto px-4 py-8">
+      <div className="max-w-screen-xl mx-auto px-4">
         <div className="bg-white shadow-lg rounded-lg overflow-hidden">
           
 
           {/* Content Section */}
-          <div className="p-50 ">
-            <h1 className='text-4xl font-bold text-center'>Placement Searching...</h1>
+          <div className=" px-10">
+            <MaskContainer
+              revealText={
+                <h1 className="text-4xl font-bold text-[#800000] ">
+                  Placement <span className="text-blue-600">Searching</span>...
+                </h1>
+              }
+            >
+              <h1 className="text-4xl font-bold text-white">
+                Placement <span>Searching</span>...
+              </h1>
+            </MaskContainer>
             <div className="prose max-w-none">
              
             </div>
