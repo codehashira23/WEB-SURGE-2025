@@ -179,20 +179,6 @@ const BTech = () => {
               </Link>
             </div>
           </div>
-          
-          {/* Contact Information */}
-          <div className="bg-gray-50 p-6 rounded-md">
-            <h2 className="text-2xl font-semibold text-[#800000] mb-4">Contact Information</h2>
-            <p className="text-gray-700 mb-2">
-              For academic inquiries related to the B.Tech program, please contact:
-            </p>
-            <p className="text-gray-700">
-              <strong>Email:</strong> academics@diu.iiitvadodara.ac.in
-            </p>
-            <p className="text-gray-700">
-              <strong>Phone:</strong> +91 79905 73335
-            </p>
-          </div>
         </div>
       </div>
     </div>

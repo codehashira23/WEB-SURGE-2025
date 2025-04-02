@@ -136,7 +136,7 @@ export default function Home() {
             <Carousel 
               images={carouselImages} 
               autoplay={true} 
-              autoplayDelay={2000} 
+              autoplayDelay={2500} 
               options={{ loop: true }}
             />
           </div>

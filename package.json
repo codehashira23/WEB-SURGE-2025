@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "@radix-ui/react-navigation-menu": "^1.2.5",
+    "@tabler/icons-react": "^3.31.0",
     "embla-carousel-react": "^8.5.2"
   }
 }
