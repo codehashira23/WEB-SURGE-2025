@@ -113,7 +113,7 @@ const Navbar = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="" legacyBehavior passHref>
+                        <Link href="/rti" legacyBehavior passHref>
                           <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
                             RTI
                           </NavigationMenuLink>
@@ -152,15 +152,119 @@ const Navbar = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/mca" legacyBehavior passHref>
+                        <Link href="#" legacyBehavior passHref>
                           <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
                             Post Graduate (MCA)
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            BSc(online)
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            Ordinance
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                              B.Tech. Curriculum(2018) 
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                             Holiday list 2025  
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                              Acadmic Calender 
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                          Time Table
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem className="relative">
+                  <NavigationMenuTrigger className="font-medium text-white bg-[#800000] hover:bg-[#5d0000] focus:bg-[#5d0000] rounded-none h-auto py-3 px-4 data-[state=open]:bg-[#5d0000]">
+                    Admission
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white shadow-md rounded-b-md border-0 origin-top-left absolute left-0 z-50">
+                    <ul className="grid w-[200px] gap-0">
+                      <li>
+                        <Link href="#" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            Btech
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            SII 2024
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            NRI Admissions 2024 b.tech. (CSE)
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            M.Tech. 
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                          MCA
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            PhD
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            BSc (online)
                           </NavigationMenuLink>
                         </Link>
                       </li>
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
+
+
 
                 {/* People dropdown */}
                 <NavigationMenuItem className="relative">
@@ -180,6 +284,13 @@ const Navbar = () => {
                         <Link href="/staff" legacyBehavior passHref>
                           <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
                             Staff
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/officer" legacyBehavior passHref>
+                          <NavigationMenuLink className="block px-4 py-2 text-[#800000] hover:bg-gray-100">
+                            Officer
                           </NavigationMenuLink>
                         </Link>
                       </li>
