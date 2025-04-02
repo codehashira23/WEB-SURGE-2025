@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { GlareCard } from '@/components/ui/glare-card';
 
 const Director = () => {
   return (
@@ -11,15 +12,20 @@ const Director = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Director's Image and Info */}
             <div className="flex flex-col items-center">
-              <div className="relative w-64 h-80 mb-4">
-                <Image 
-                  src="http://diu.iiitvadodara.ac.in/img/Prof_Dharmendra_Singh_1.png"
-                  alt="Prof. Dharmendra Singh" 
-                  fill
-                  className="object-cover rounded-md"
-                />
+              <div className="w-[320px] aspect-[17/21]">
+                <GlareCard>
+                  <div className="relative w-full h-full">
+                    <Image 
+                      src="http://diu.iiitvadodara.ac.in/img/Prof_Dharmendra_Singh_1.png"
+                      alt="Prof. Dharmendra Singh" 
+                      fill
+                      className="object-cover rounded-md"
+                      sizes="(max-width: 768px) 100vw, 320px"
+                    />
+                  </div>
+                </GlareCard>
               </div>
-              <div className="text-center">
+              <div className="text-center mt-4">
                 <h2 className="text-xl font-semibold text-blue-600">Prof. Dharmendra Singh</h2>
                 <p className="text-gray-600">Director</p>
               </div>
