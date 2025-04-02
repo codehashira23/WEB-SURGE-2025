@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from 'react';
 import { FAQExpandableCard } from '@/components/faq-expandable-card';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const faqItems = [
   {
@@ -80,7 +82,7 @@ const faqItems = [
           Student accommodation is available in campus. Hostel has student capacity of 416 students. There is separate accommodation for girl students.
         </p>
         <p>
-          <Link href="/hostel" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+          <Link href="/hostel" className="text-blue-600 hover:underline">
             For more information
           </Link>
         </p>

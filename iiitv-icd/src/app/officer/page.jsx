@@ -43,12 +43,11 @@ const officers = [
 
 export default function Officer() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="bg-white shadow-md rounded-lg overflow-hidden">
-        <div className="p-6">
-          <h1 className="text-3xl font-bold text-[#800000] mb-8">Officers</h1>
-          
-          <div className="space-y-6">
+    <div className="min-h-screen bg-gray-50">
+      <div className="container mx-auto px-4 py-12">
+        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="p-6">
+            <h1 className="text-3xl font-bold text-[#800000] mb-8">Officers</h1>
             <ExpandableCardDemo officers={officers} />
           </div>
         </div>

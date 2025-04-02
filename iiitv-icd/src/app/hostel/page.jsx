@@ -313,13 +313,7 @@ const Hostel = () => {
           </div>
         </div>
       )}
-
-      {/* Footer */}
-      <div className="bg-[#800000] text-white py-6 mt-16">
-        <div className="container mx-auto px-4 text-center">
-          <p>© {new Date().getFullYear()} IIIT Vadodara-International Campus Diu. All rights reserved.</p>
-        </div>
-      </div>
+     
     </div>
   );
 };
