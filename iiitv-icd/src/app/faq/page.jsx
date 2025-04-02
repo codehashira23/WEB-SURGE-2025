@@ -1,5 +1,6 @@
-import { Link } from 'lucide-react';
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
+import { FAQExpandableCard } from '@/components/faq-expandable-card';
 
 const faqItems = [
   {
@@ -139,29 +140,23 @@ const faqItems = [
 ];
 
 const FAQ = () => {
+  const [openCard, setOpenCard] = useState(null);
+
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="bg-white shadow-md rounded-lg overflow-hidden">
         <div className="p-6">
           <h1 className="text-3xl font-bold text-[#800000] mb-8">Frequently Asked Questions</h1>
           
-          <div className="space-y-6">
+          <div className="space-y-4">
             {faqItems.map((item, index) => (
-              <div key={index} className="border-b border-gray-200 pb-6 last:border-0 last:pb-0">
-                <details className="group">
-                  <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                    <span className="text-lg font-semibold text-[#800000]">{item.question}</span>
-                    <span className="transition group-open:rotate-180">
-                      <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                        <path d="M6 9l6 6 6-6"></path>
-                      </svg>
-                    </span>
-                  </summary>
-                  <div className="text-gray-700 mt-4 group-open:animate-fadeIn">
-                    {item.answer}
-                  </div>
-                </details>
-              </div>
+              <FAQExpandableCard
+                key={index}
+                question={item.question}
+                answer={item.answer}
+                isOpen={openCard === index}
+                onToggle={(isOpen) => setOpenCard(isOpen ? index : null)}
+              />
             ))}
           </div>
           
