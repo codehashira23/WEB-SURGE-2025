@@ -338,7 +338,7 @@ const Navbar = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link href="/commitee" legacyBehavior passHref>
+                  <Link href="/committee" legacyBehavior passHref>
                     <NavigationMenuLink className={cn(
                       "block px-4 py-3 font-medium bg-[#800000] hover:bg-[#5d0000] focus:bg-[#5d0000] text-white"
                     )}>
