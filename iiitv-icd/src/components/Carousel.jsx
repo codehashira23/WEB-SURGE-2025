@@ -32,15 +32,15 @@ const Carousel = ({ images, options = { loop: true }, autoplay = true, autoplayD
   }, [emblaApi, autoplay, autoplayDelay]);
 
   return (
-    <div className="relative w-full overflow-hidden p-4">
+    <div className="relative w-full overflow-hidden px-2 sm:px-4 py-2 sm:py-4">
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-4">
+        <div className="flex gap-2 sm:gap-4">
           {images.map((image, index) => (
             <div 
-              className="flex-[0_0_75%] md:flex-[0_0_40%] lg:flex-[0_0_30%] min-w-0 relative h-[350px]" 
+              className="flex-[0_0_90%] sm:flex-[0_0_85%] md:flex-[0_0_40%] lg:flex-[0_0_30%] min-w-0 relative h-[250px] sm:h-[300px] md:h-[350px]" 
               key={index}
             >
-              <div className="h-full p-2">
+              <div className="h-full p-1 sm:p-2">
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden h-full transform transition-transform hover:scale-[1.02]">
                   <div className="relative h-full">
                     <Image 
@@ -51,8 +51,8 @@ const Carousel = ({ images, options = { loop: true }, autoplay = true, autoplayD
                       className="object-cover w-full h-full"
                       priority={index === 0}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-                      <h3 className="text-white font-semibold text-lg"></h3>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3 sm:p-4">
+                      <h3 className="text-white font-semibold text-base sm:text-lg"></h3>
                     </div>
                   </div>
                 </div>
@@ -67,12 +67,12 @@ const Carousel = ({ images, options = { loop: true }, autoplay = true, autoplayD
         <PrevButton
           onClick={onPrevButtonClick}
           disabled={prevBtnDisabled}
-          className="pointer-events-auto z-10 ml-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/80 text-gray-800 hover:bg-white transition-colors disabled:opacity-50 shadow-md"
+          className="pointer-events-auto z-10 ml-1 sm:ml-4 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-white/80 text-gray-800 hover:bg-white transition-colors disabled:opacity-50 shadow-md"
         />
         <NextButton
           onClick={onNextButtonClick}
           disabled={nextBtnDisabled}
-          className="pointer-events-auto z-10 mr-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/80 text-gray-800 hover:bg-white transition-colors disabled:opacity-50 shadow-md"
+          className="pointer-events-auto z-10 mr-1 sm:mr-4 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-white/80 text-gray-800 hover:bg-white transition-colors disabled:opacity-50 shadow-md"
         />
       </div>
     </div>

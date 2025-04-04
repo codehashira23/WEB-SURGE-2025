@@ -194,9 +194,9 @@ const Staff = () => {
                 <motion.div
                   layoutId={`card-${active.name}-${id}`}
                   ref={ref}
-                  className="w-full max-w-[600px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white rounded-3xl overflow-hidden"
+                  className="w-full max-w-[600px] h-[90vh] md:h-auto md:max-h-[90vh] flex flex-col bg-white rounded-3xl overflow-hidden"
                 >
-                  <motion.div layoutId={`image-${active.name}-${id}`} className="relative h-64 w-full">
+                  <motion.div layoutId={`image-${active.name}-${id}`} className="relative h-64 w-full flex-shrink-0">
                     <Image
                       src={active.image}
                       alt={active.name}
@@ -206,7 +206,7 @@ const Staff = () => {
                     />
                   </motion.div>
 
-                  <div className="p-6 overflow-y-auto">
+                  <div className="p-6 overflow-y-auto flex-1">
                     <motion.h3
                       layoutId={`title-${active.name}-${id}`}
                       className="font-semibold text-[#800000] text-xl mb-2"

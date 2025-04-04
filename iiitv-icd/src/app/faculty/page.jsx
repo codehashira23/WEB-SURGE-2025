@@ -159,7 +159,7 @@ const Faculty = () => {
             <motion.div
               layoutId={`card-${active.name}-${id}`}
               ref={ref}
-              className="w-full max-w-[600px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[600px] h-[90vh] md:h-auto md:max-h-[90vh] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.name}-${id}`} className="relative">
                 <Image
@@ -172,7 +172,7 @@ const Faculty = () => {
                 />
               </motion.div>
 
-              <div className="p-6">
+              <div className="p-6 overflow-y-auto flex-1">
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <motion.h3
