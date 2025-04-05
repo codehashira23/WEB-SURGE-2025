@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "IIIT Vadodara-International Campus Diu",
   description: "Official website of IIIT Vadodara-International Campus Diu",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
